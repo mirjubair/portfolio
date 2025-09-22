@@ -1,12 +1,10 @@
 "use client";
-import { motion } from "framer-motion";
-import Reveal from "@/components/Reveal";
+import { motion, Variants } from "framer-motion";
 
 export default function Hero() {
   const name = "Mir Jubair Ul Rehman";
 
-  // Animation for popping characters
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -14,13 +12,13 @@ export default function Hero() {
     },
   };
 
-  const child = {
+  const child: Variants = {
     hidden: { opacity: 0, y: 20, scale: 0.8 },
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: { type: "spring", stiffness: 500, damping: 30 },
+      transition: { type: "spring" as const, stiffness: 500, damping: 30 },
     },
   };
 
