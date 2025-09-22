@@ -1,5 +1,6 @@
 "use client";
 import { motion, Variants } from "framer-motion";
+import { Github, Linkedin } from "lucide-react";
 
 export default function Hero() {
   const name = "Mir Jubair Ul Rehman";
@@ -32,9 +33,12 @@ export default function Hero() {
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
-        className="mb-6 text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400"
+        className="mb-6 relative w-20 h-20 flex items-center justify-center 
+                   rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 
+                   text-white font-extrabold text-3xl shadow-[0_0_30px_rgba(168,85,247,0.7)]"
       >
         MJ
+        <span className="absolute inset-0 rounded-full border-4 border-purple-400/50 animate-pulse"></span>
       </motion.div>
 
       {/* Animated Name */}
@@ -65,6 +69,33 @@ export default function Hero() {
       >
         Software Developer · Problem Solver
       </motion.p>
+
+      {/* Social Links */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 1 }}
+        className="mt-8 flex gap-6"
+      >
+        <a
+          href="https://github.com/mirjubair"
+          target="_blank"
+          className="p-3 rounded-full bg-white/5 border border-purple-400/30 
+                     text-purple-300 hover:text-white hover:bg-purple-500/20 
+                     transition-all duration-300 hover:scale-110"
+        >
+          <Github size={28} />
+        </a>
+        <a
+          href="https://linkedin.com/in/mirjubair"
+          target="_blank"
+          className="p-3 rounded-full bg-white/5 border border-indigo-400/30 
+                     text-indigo-300 hover:text-white hover:bg-indigo-500/20 
+                     transition-all duration-300 hover:scale-110"
+        >
+          <Linkedin size={28} />
+        </a>
+      </motion.div>
     </section>
   );
 }
